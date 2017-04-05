@@ -9,10 +9,11 @@
 # Only complaints with more than 200 words in their complaint narrative (43038 complaints)
 # Take 1/18 of those.
 
+# Section 4.1
 # Load required code libraries
 
-library(lsa)
 library(LSAfun)
+library(lsa)
 
 #########################
 # Replace the [...] with the path in which the directory MiniComplaints is to be created.
@@ -71,6 +72,8 @@ plot(dk2[,1], y= dk2[,2], col="blue", pch="+", main="DK Plot")
 text(dk2[,1], y= dk2[,2], labels=rownames(dk2), cex=.70)
 
 #########################
+# Section 4.2
+#
 # Create a cosine similarity between two Terms
 myCo <- costring('loan','chang', tvectors= tk2, breakdown=TRUE)
 myCo                          # Typing the name of an object prints its value
@@ -143,6 +146,8 @@ wordcloud(myTerms, TCT, min.freq=1, random.order=FALSE, color=brewer.pal(8, "Dar
 
 
 #########################
+# Section 4.3
+#
 # Load required code libraries
 library(cluster)
 library(tm)
@@ -199,6 +204,8 @@ costring("trust believ", "reconcil loss", tvectors= myLSAspace$tk[,1:75], breakd
 costring("trust believ", "fraud prevent", tvectors= myLSAspace$tk[,1:75], breakdown=T)
 
 #########################
+# Section 4.4
+#
 if (!require("tm")) {
    install.packages("tm", dependencies = TRUE)
    library(tm)
