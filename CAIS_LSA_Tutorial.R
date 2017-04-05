@@ -9,7 +9,7 @@
 # Only complaints with more than 200 words in their complaint narrative (43038 complaints)
 # Take 1/18 of those.
 
-# Section 4.1
+# Section 3.1
 # Load required code libraries
 
 library(LSAfun)
@@ -71,7 +71,7 @@ plot(dk2[,1], y= dk2[,2], col="blue", pch="+", main="DK Plot")
 text(dk2[,1], y= dk2[,2], labels=rownames(dk2), cex=.70)
 
 #########################
-# Section 4.2
+# Section 3.2
 #
 # Create a cosine similarity between two Terms
 myCo <- costring('loan','chang', tvectors= tk2, breakdown=TRUE)
@@ -145,7 +145,7 @@ wordcloud(myTerms, TCT, min.freq=1, random.order=FALSE, color=brewer.pal(8, "Dar
 
 
 #########################
-# Section 4.3
+# Section 3.3
 #
 # Load required code libraries
 library(cluster)
@@ -203,7 +203,7 @@ costring("trust believ", "reconcil loss", tvectors= myLSAspace$tk[,1:75], breakd
 costring("trust believ", "fraud prevent", tvectors= myLSAspace$tk[,1:75], breakdown=T)
 
 #########################
-# Section 4.4
+# Section 3.4
 #
 if (!require("tm")) {
    install.packages("tm", dependencies = TRUE)
@@ -265,7 +265,7 @@ weighted_tdm <- sweep(weighted_tdm, 1, word_entropy, '*')
 space <- svds(weighted_tdm, 300)                                                            su_mat <- space$d * space$usvt_mat <- space$d * Matrix::t(space$v)#Assign namesdimnames(su_mat) <- list(dimnames(weighted_tdm)[[1]], 1:300)   dimnames(svt_mat) <- list(1:300, dimnames(weighted_tdm)[[2]])  
 
 #########################
-plot_neighbors("python",n=20,tvectors= su_mat)plot_neighbors("JAVA",n=20,tvectors= su_mat)plot_neighbors("JavaScript",n=20,tvectors= su_mat)
+plot_neighbors("python",n=20,tvectors= su_mat)plot_neighbors("java",n=20,tvectors= su_mat)plot_neighbors("javascript",n=20,tvectors= su_mat)
 
 #########################
 if (!require("wordcloud")) {   install.packages("wordcloud", dependencies = TRUE)   library(wordcloud)   }Term_count <-apply(su_mat,1,sum)TCT <- t(Term_count)myTerms <- rownames(su_mat)wordcloud(myTerms, TCT, min.freq=1, random.order=FALSE, color=brewer.pal(8, "Dark2"))
