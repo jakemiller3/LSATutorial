@@ -20,7 +20,6 @@ library(lsa)
 source_dir = '[...]'
 # source_dir = 'C:/Users/username/Desktop/MiniComplaints' # Windows example
 # source_dir = '~/Desktop/MiniComplaints' # Mac/Unix example 
-# source_dir = '~/Dropbox/Projects/Gefen/ElanceLSA/CAIS/MiniComplaints' # REMOVE THIS ONE
 
 #########################
 data(stopwords_en) 
