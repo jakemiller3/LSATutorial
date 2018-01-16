@@ -49,8 +49,9 @@ tk2 = t(miniLSAspace$sk * t(miniLSAspace$tk))
 tk2
 
 #########################
-# This will show the matrix of Documents
-miniLSAspace$dk
+# This command will show the value-weighted matrix of Documents
+dk2 = t(miniLSAspace$sk * t(miniLSAspace$dk))
+dk2
 
 #########################
 # Because the $sk matrix only has values on the diagonal, R stores it as a numeric vector. 
